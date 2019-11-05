@@ -1683,7 +1683,7 @@ class PerfectMySQLTests: XCTestCase {
 			struct IntTest: Codable {
 				let id: Int
 			}
-			try db.sql("CREATE TABLE IntTest(id tinyint PRIMARY KEY)")
+			try db.sql("CREATE TABLE IntTest(id TINYINT UNSIGNED PRIMARY KEY)")
 			let table = db.table(IntTest.self)
 			let inserted = IntTest(id: 1)
 			try table.insert(inserted)

@@ -66,6 +66,16 @@ class MySQLCRUDRowReader<K : CodingKey>: KeyedDecodingContainerProtocol {
 			return Int(i)
 		case let i as Int:
 			return i
+		case let i as UInt64:
+			return Int(i)
+		case let i as UInt32:
+			return Int(i)
+		case let i as UInt16:
+			return Int(i)
+		case let i as UInt8:
+			return Int(i)
+		case let i as UInt:
+			return Int(i)
 		default:
 			throw MySQLCRUDError("Could not convert \(String(describing: a)) into an Int for key: \(key.stringValue)")
 		}
